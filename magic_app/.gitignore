@@ -9,7 +9,7 @@
 
 # Ignore all environment files.
 /.env*
-
+/.kamal
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -32,4 +32,26 @@
 
 # Ignore key files for decrypting credentials and more.
 /config/*.key
+
+# macOS
+.DS_Store
+
+# Editor / IDE
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Rails / Ruby
+/db/*.sqlite3
+/db/*.sqlite3-*
+/.byebug_history
+/coverage/
+
+# Node (if you add a JS build later)
+node_modules/
+
+# Local env overrides (keep .env.example if you use one)
+.env.local
+.env.*.local
 
