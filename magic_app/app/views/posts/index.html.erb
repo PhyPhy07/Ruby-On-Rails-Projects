@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<h1>Posts</h1>
+
+<h2>Posts created over time</h2>
+<%= line_chart Post.group_by_day(:created_at).count %>
+
+<h2>Views per post</h2>
+<%= column_chart Post.pluck(:title, :views), colors: ["#3b82f6"] %>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path %>
